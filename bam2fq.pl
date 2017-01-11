@@ -32,6 +32,5 @@ while (my ($id,$val) = each(%rd1)) {
         print FD2 "\@$id/2\n$rd2{$id}";
      }
 }
-
 close(FD1);
 close(FD2);
