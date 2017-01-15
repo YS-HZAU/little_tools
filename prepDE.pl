@@ -44,7 +44,7 @@ print "sample ID @sample\n";
 foreach my $i (@sample) {
 	$head.="$sep$i";
 	print "load $in/$i/t_data.ctab....\n";
-	open IN,"$in/$i/t_data.ctab" ||die "can't find t_data.ctab "
+	open IN,"$in/$i/t_data.ctab" ||die "can't find t_data.ctab";
 	<IN>;
 	while(<IN>){
 		chomp;
