@@ -8,14 +8,14 @@ pieplot <- function(r=0.2,total=4305181,Exon=1186517,Intron=2525812) {
     
     nn = floating.pie(0,0, c(Exon,Intron,Intergenic),radius=5*r,startpos=pi/2,col=cols[c("Exon", "Intron",'Intergenic')],border=NA)
     id = paste(c(round(Exon/total*100,2),round(Intron/total*100,2),round(Intergenic/total*100,2)),"%",sep="")
-    pie.labels(0,0,nn,id,radius=4*r+0.005,minangle=0.2,explode=c(0.3,0.3,0.3,0.3),border=NA)
+    pie.labels(0,0,nn,id,radius=4*r+0.005,minangle=0.2,explode=c(0.3,0.3,0.3),border=NA)
 
     floating.pie(0,0, c(Intron),radius=4*r,startpos=pi/2,col=cols[c("NO")],border=NA)
     floating.pie(0,0, c(Intron),radius=3*r,startpos=pi/2,col=cols[c("NO")],border=NA)
     
     nn = floating.pie(0, 0, c(Genic, Intergenic),radius=2*r,startpos=pi/2,col=cols[c("Genic", "Intergenic")],border=NA)
     id = paste(c(round(Genic/total*100,2),round(Intergenic/total*100,2)),"%",sep="")
-    pie.labels(0,0,nn,id,radius=2*r+0.005,minangle=0.2,explode=c(0.05,0.05,0.05,0.05),border=NA)
+    pie.labels(0,0,nn,id,radius=2*r+0.005,minangle=0.2,explode=c(0.05,0.05),border=NA)
     legend(5*r, 5*r, legend=sub("_", " ", names(cols)[-1]),fill=cols[-1], bty="n", cex=1.2)
 }
 #pieplot()
