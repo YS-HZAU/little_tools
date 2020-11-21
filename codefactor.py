@@ -1,0 +1,160 @@
+### parse the string which is the nian col in gtf file  ###
+from collections import OrderedDict
+def parseString(mystr):
+    """
+    mystr: gtf attribution information string
+    return: a dictionary
+    """
+    d = OrderedDict()
+    if mystr.endswith(";"):
+        mystr = mystr[:-1]
+    for i in mystr.strip().split(";"):
+        tmp = i.strip().split()
+        if tmp == "":
+            continue
+        d[tmp[0]] = tmp[1].replace("\"","")
+    return d
+
+### Operating common files  ###
+import gzip
+def openFile(infile):
+    """
+    infile: input file
+    return: file handle
+    """
+    if infile.endswith((".gz","gzip")):
+        fin = gzip.open(infile,'rt')
+    else:
+        fin = open(infile,'r')
+    return fin
+        
+def writeFile(outfile):
+    """
+    outfile: output file
+    return: file handle
+    """
+    if outfile.endswith((".gz","gzip")):
+        fout = gzip.open(outfile,'wt')
+    else:
+        fout = open(outfile,'w')
+    return fout
+
+### Operating sam/bam files  ###
+import pysam
+def openSam(insamfile):
+    """
+    insamfile: input sam/bam file
+    return: file handle
+    """
+    if insamfile.endswith(".bam"):
+        insam = pysam.AlignmentFile(insamfile,'rb')
+    elif insamfile.endswith(".sam"):
+        insam = pysam.AlignmentFile(insamfile,'r')
+    else:
+        raise ValueError("the input sam/bam file is not end with sam or bam!")
+    return insam
+        
+def writeSam(outsamfile,header):
+    """
+    outsamfile: output sam/bam file
+    header: the sam/bam file's header(chromosome information, created by insam.handle)
+    return: file handle
+    """
+    if outsamfile.endswith(".bam"):
+        outsam = pysam.AlignmentFile(outsamfile,'wb',header=header)
+    elif outsamfile.endswith(".sam"):
+        outsam = pysam.AlignmentFile(outsamfile,'w',header=header)
+    else:
+        raise ValueError("the output sam/bam file is not end with sam or bam!")
+    return outsam
+
+### Interval tree ###
+from bx.intervals.intersection import Intersecter, Interval
+def regionTree(tmp,resFrag):
+    """
+    tmp: The length of the list is at least 3(chrom,start,end)
+    resFrag: a dictionary to store the Interval tree
+    """
+    if tmp[0] in resFrag:
+        resFrag[tmp[0]].add_interval(Interval(int(tmp[1]),int(tmp[2])))
+    else:
+        resFrag[tmp[0]] = Intersecter()
+        resFrag[tmp[0]].add_interval(Interval(int(tmp[1]),int(tmp[2])))
+def regionFind(tree,start,end):
+    """
+    tree: the intervals tree
+    start: the given region's start
+    end: the given region's end
+    return: a list of overlap region
+    """
+    return tree.find(start,end)
+
+### reverse strand ###
+def reverseStrand(mystr):
+    """
+    mystr: the strand( + or -)
+    return: the opposite strand(- or +)
+    """
+    if mystr == "+":
+        return '-'
+    elif mystr == "-":
+        return "+"
+    else:
+        raise ValueError("please check the input strand, must be +/-\n{0}\n".format(mystr))
+
+### determine whether there is overlap between the two intervals ###
+def detOverlap(s1,e1,s2,e2):
+    """
+    s1,e1,s2,e2: two intervals start and end pos
+    return: the True/False whether two intervals has overlap
+    """
+    if s1 <= s2:
+        if e1 > s2:
+            return True
+        else:
+            return False
+    else:
+        if e2 > s1:
+            return True
+        else:
+            return False
+def detOverlapDis(s1,e1,s2,e2):
+    """
+    s1,e1,s2,e2: two intervals start and end pos
+    return: the True/False whether two intervals has overlap and the overlap length or distance
+    """
+    if s1 <= s2:
+        if e1 > s2:
+            if e1 < e2:
+                return True,e1-s2
+            else:
+                return True,e2-s2
+        else:
+            return False,s2-e1+1
+    else:
+        if e2 > s1:
+            if e2 < e1:
+                return True,e2-s1
+            else:
+                return True,e1-s1
+        else:
+            return False,s1-e2+1
+def detOverlapChrom(c1,s1,e1,c2,s2,e2):
+    """
+    c1,s1,e1,c2,s2,e2: two intervals chrom start and end pos
+    return: the True/False whether two intervals has overlap
+    """
+    if c1 == c2:
+        return detOverlap(s1,e1,s2,e2)
+    else:
+        return False
+def detOverlapDisChrom(c1,s1,e1,c2,s2,e2):
+    """
+    c1,c2,s1,e1,s2,e2: two intervals chrom start and end pos
+    return: the True/False whether two intervals has overlap and the overlap length or distance.
+    if local on two different chromosome, the distance is -1
+    """
+    if c1 == c2:
+        return detOverlapDis(s1,e1,s2,e2)
+    else:
+        return False,-1
