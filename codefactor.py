@@ -158,3 +158,50 @@ def detOverlapDisChrom(c1,s1,e1,c2,s2,e2):
         return detOverlapDis(s1,e1,s2,e2)
     else:
         return False,-1
+
+### merge the overlap interva ( like bedtools merge ) ###
+def mergeRegion(regions,order=True):
+    """
+    regions: A list of locations [[start1,end1],[start2,end2],[start3,end3]...]
+    order: is the regions in order
+    return: the merge regions
+    """
+    import copy
+    if len(regions) < 2:
+        return copy.deepcopy(regions)
+    if order != True:
+        tmpr = sorted(regions,key=lambda x:(x[0],x[1]))
+    else:
+        tmpr = copy.deepcopy(regions)
+    merge = []
+    start = tmpr[0][0]
+    end = tmpr[0][1]
+    for s,e in tmpr:
+        if s > end:
+            merge.append([start,end])
+            start = s
+            end = e
+        else:
+            if e > end:
+                end = e
+    merge.append([start,end])
+    return merge
+### extract blank area ( like get the intron region from exon regions ) ###
+def getBlankRegin(regions,order=True,merge=True):
+    """
+    regions: A list of locations [[start1,end1],[start2,end2],[start3,end3]...]
+    order: is the regions in order
+    merge: the region has no overlap
+    return: the black regions
+    """
+    if order != True:
+        raise ValueError("the input regions must be sorted")
+    if merge != True:
+        raise ValueError("the input regions has no overlap")
+    black = []
+    if len(regions) > 1:
+        start = regions[0][1]
+        for s,e in regions[1:]:
+            black.append([start,s])
+            start = e
+    return black
