@@ -205,3 +205,84 @@ def getBlankRegin(regions,order=True,merge=True):
             black.append([start,s])
             start = e
     return black
+
+
+### interval class and some method ###
+class region():
+    """
+    A region
+    start: a region start pos
+    end: a region end pos
+    """
+    def __init__(self,start,end):
+        self.start = int(start)
+        self.end = int(end)
+        if self.start > self.end:
+            raise ValueError("start is larger than end")
+    def __repr__(self):
+        return "class {0}: {1}\t{2}".format(self.__class__.__name__,self.start,self.end)
+    def __str__(self):
+        return self.__repr__()
+    def __eq__(self,other):
+        if not isinstance(other,region):
+            return False
+        return self.start == other.start and self.end == other.end
+    def __neq__(self,other):
+        if not isinstance(other,region):
+            return True
+        return not self.__eq__(other)
+    def __len__(self):
+        return self.end-self.start
+    def length(self):
+        return self.__len__
+
+class bed3(region):
+    """
+    A bed3 format region
+    chrom: a chromosme
+    start: a region start pos
+    end: a region end pos
+    """
+    def __init__(self,chrom,start,end):
+        region.__init__(self,start,end)
+        self.chrom = chrom
+    def __repr__(self):
+        return "class {0}: {1}\t{2}\t{3}".format(self.__class__.__name__,self.chrom,self.start,self.end)
+    def __str__(self):
+        return self.__repr__()
+    def __eq__(self,other):
+        if not isinstance(other,bed3):
+            return False
+        return super(bed3, self).__eq__(other) and self.chrom == other.chrom
+    def __neq__(self,other):
+        if not isinstance(other,bed3):
+            return True
+        return not self.__eq__(other)
+
+class bed6(bed3):
+    """
+    A bed6 format region
+    chrom: a chromosome
+    start: a region start pos
+    end: a region end pos
+    name: region name
+    score: score
+    strand: + or - strand
+    """
+    def __init__(self,chrom,start,end,name=".",score=0,strand="."):
+        bed3.__init__(self,chrom,start,end)
+        self.name = name
+        self.score = score
+        self.strand = strand
+    def __repr__(self):
+        return "class {0}: {1}\t{2}\t{3}\t{4}\t{5}\t{6}".format(self.__class__.__name__,self.chrom,self.start,self.end,self.name,self.score,self.strand)
+    def __str__(self):
+        return self.__repr__()
+    def __eq__(self,other):
+        if not isinstance(other,bed6):
+            return False
+        return super(bed6, self).__eq__(other) and self.name == other.name and self.score == other.score and self.strand == other.strand
+    def __neq__(self,other):
+        if not isinstance(other,bed6):
+            return True
+        return not self.__eq__(other)
