@@ -17,7 +17,7 @@ def parseString(mystr):
 
 ### Operating common files  ###
 import gzip
-def openFile(infile):
+def readFile(infile):
     """
     infile: input file
     return: file handle
@@ -41,7 +41,7 @@ def writeFile(outfile):
 
 ### Operating sam/bam files  ###
 import pysam
-def openSam(insamfile):
+def readSam(insamfile):
     """
     insamfile: input sam/bam file
     return: file handle
