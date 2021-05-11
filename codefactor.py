@@ -68,6 +68,17 @@ def writeSam(outsamfile,header):
         raise ValueError("the output sam/bam file is not end with sam or bam!")
     return outsam
 
+def rc(sequence):
+    """
+    Reverse complementary sequence
+    sequence: 
+    return: 
+    """
+    seq = sequence[::-1]
+    trantab = str.maketrans('ACGTacgtRYMKrymkVBHDvbhd', 'TGCAtgcaYRKMyrkmBVDHbvdh')
+    string = seq.translate(trantab)
+    return string
+
 ### Interval tree ###
 from bx.intervals.intersection import Intersecter, Interval
 def regionTree(tmp,resFrag):
