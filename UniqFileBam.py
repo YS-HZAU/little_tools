@@ -41,8 +41,8 @@ def BOWTIE2(insam,outsam,mapq,flag,dropsam):
 def HISAT(insam,outsam,mapq,flag,dropsam):
     Nmap = Ndrop = 0
     for reads in insam:
-        # if not reads.is_unmapped and reads.get_tag("NH") == 1 and reads.mapping_quality >= mapq:
-        if not reads.is_unmapped and not reads.is_duplicate and not reads.is_secondary and reads.get_tag("NH") == 1 and not reads.has_tag("ZS") and reads.mapping_quality >= mapq:
+        if not reads.is_unmapped and reads.get_tag("NH") == 1 and reads.mapping_quality >= mapq:
+        # if not reads.is_unmapped and not reads.is_duplicate and not reads.is_secondary and reads.get_tag("NH") == 1 and not reads.has_tag("ZS") and reads.mapping_quality >= mapq:
             outsam.write(reads)
             Nmap += 1
         else:
