@@ -24,7 +24,7 @@ def writeFile(outfile):
     return fout
 
 R1 = sys.argv[1]
-R1out = sys.argv[3]
+R1out = sys.argv[2]
 
 fin1 = readFile(R1)
 fout1 = writeFile(R1out)
