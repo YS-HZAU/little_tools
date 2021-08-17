@@ -46,5 +46,7 @@ for i in fin1:
         seq.add(seq1)
         uniq += 1
 
+fin1.close()
 fout1.close()
 sys.stderr.write("The input total reads: {0} and the uniq reads: {1}\n".format(total,uniq))
+sys.stderr.close()
