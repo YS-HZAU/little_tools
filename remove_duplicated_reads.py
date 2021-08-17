@@ -56,6 +56,9 @@ for i,j in zip(fin1,fin2):
         seq.add(combineSeq)
         uniq += 1
 
+fin1.close()
+fin2.close()
 fout1.close()
 fout2.close()
 sys.stderr.write("The input total reads: {0} and the uniq reads: {1}\n".format(total,uniq))
+sys.stderr.close()
