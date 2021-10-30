@@ -52,5 +52,6 @@ count[deal(out,myfl)] += 1
 
 samfl.close()
 for i in outlist.keys():
-    myfl[i].close()
-    print("{0}\t{1}".format(i,count[i]))
+    if i in myfl:
+        myfl[i].close()
+        print("{0}\t{1}".format(i,count[i]))
