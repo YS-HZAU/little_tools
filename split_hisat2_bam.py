@@ -51,7 +51,7 @@ for reads in samfl:
 count[deal(out,myfl)] += 1
 
 samfl.close()
-for i in outlist.keys():
+for i in outlist:
     if i in myfl:
         myfl[i].close()
         print("{0}\t{1}".format(i,count[i]))
