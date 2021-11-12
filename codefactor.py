@@ -88,7 +88,7 @@ def regionTree(tmp,resFrag):
     """
     if tmp[0] not in resFrag:
         resFrag[tmp[0]] = Intersecter()
-    resFrag[tmp[0]].add_interval(Interval(int(tmp[1]),int(tmp[2],tmp[3:])))
+    resFrag[tmp[0]].add_interval(Interval(int(tmp[1]),int(tmp[2]),tmp[3:]))
     
 def regionFind(tree,start,end):
     """
