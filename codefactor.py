@@ -86,11 +86,10 @@ def regionTree(tmp,resFrag):
     tmp: The length of the list is at least 3(chrom,start,end)
     resFrag: a dictionary to store the Interval tree
     """
-    if tmp[0] in resFrag:
-        resFrag[tmp[0]].add_interval(Interval(int(tmp[1]),int(tmp[2])))
-    else:
+    if tmp[0] not in resFrag:
         resFrag[tmp[0]] = Intersecter()
-        resFrag[tmp[0]].add_interval(Interval(int(tmp[1]),int(tmp[2])))
+    resFrag[tmp[0]].add_interval(Interval(int(tmp[1]),int(tmp[2],tmp[3:])))
+    
 def regionFind(tree,start,end):
     """
     tree: the intervals tree
