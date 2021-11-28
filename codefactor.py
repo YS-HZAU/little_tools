@@ -68,6 +68,23 @@ def writeSam(outsamfile,header):
         raise ValueError("the output sam/bam file is not end with sam or bam!")
     return outsam
 
+class SamRead:
+    """
+    get sam read
+    """
+    def __init__(self,infile):
+        self.fin = readSam(infile)
+    def __iter__(self):
+        flag = None
+        outlist = []
+        for read in self.fin:
+            if flag != None and flag != read.query_name:
+                yield outlist
+                outlist = []
+            outlist.append(read)
+            flag = read.query_name
+        yield outlist
+
 def rc(sequence):
     """
     Reverse complementary sequence
