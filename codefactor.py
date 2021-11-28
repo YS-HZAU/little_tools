@@ -83,6 +83,7 @@ class SamRead:
                 outlist = []
             outlist.append(read)
             flag = read.query_name
+        self.fin.close()
         yield outlist
 
 def rc(sequence):
