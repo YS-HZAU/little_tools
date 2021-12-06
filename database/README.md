@@ -18,3 +18,9 @@
 ### 水稻基因组
 [ZS97 & MH63](https://rice.hzau.edu.cn/cgi-bin/rice_rs3/download_ext)，缺点是不含线粒体和叶绿体<br/>
 [日本晴 Oryza](https://rapdb.dna.affrc.go.jp/download/irgsp1.html)，含有线粒体，叶绿体<br/>
+
+# 林奈分类以及一些常见简写
+
+简写 | 全称 | 翻译 | 发现的场景
+-----------|----------
+CB | Caenorhabditis briggsae | 广杆属线虫 | repbase中查阅
