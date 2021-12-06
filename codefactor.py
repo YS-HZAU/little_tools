@@ -86,6 +86,24 @@ class SamRead:
         self.fin.close()
         yield outlist
 
+class FaRead:
+    def __init__(self,infile):
+        self.fin = readFile(infile)
+    def __iter__(self):
+        flag = None
+        outstr = ""
+        for line in self.fin:
+            if flag == None:
+                flag = line.strip()[1:]
+            elif line.startswith(">"):
+                yield flag,outstr
+                flag = line.strip()[1:]
+                outstr = ""
+            else:
+                outstr += line.strip()
+        self.fin.close()
+        yield flag,outstr
+        
 def rc(sequence):
     """
     Reverse complementary sequence
