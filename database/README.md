@@ -23,4 +23,9 @@
 
 简写 | 全称 | 翻译 | 发现的场景
 -----------|----------
-CB | Caenorhabditis briggsae | 广杆属线虫 | repbase中查阅
+CB  | Caenorhabditis briggsae | 广杆属线虫 | repbase中查阅
+ECa | Eucalyptus camaldulensis| 赤桉; 桉树林多为赤桉 | repbase中查阅
+EC  | Equus caballus | 马 | repbase中查阅（少量）
+ML  | Myotis lucifugus|蝙蝠|repbase中查阅
+CR  | Chlamydomonas reinhardtii | 莱茵衣藻 | repbase中查阅
+SP  | Strongylocentrotus | 海胆 | repbase中查阅
