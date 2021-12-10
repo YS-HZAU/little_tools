@@ -50,3 +50,5 @@ ggboxplot(ToothGrowth,x="supp",fill="supp",y="normal",color = "black",palette=c(
   geom_point(data=meandata,mapping=aes(x=supp,y=normal),size=5) +
   theme_bw() +
   theme(panel.grid=element_blank(),axis.line=element_line(size=1,colour="black"))
+
+compare_means(data=ToothGrowth,len~supp,method = "wilcox.test")
