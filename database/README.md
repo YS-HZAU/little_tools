@@ -15,6 +15,8 @@
 # repeat 数据库条目（有些repeat RNA也属于该条目）
 ### repeat database
 [RepBase](https://www.girinst.org/server/RepBase/)是一个整理的repeat数据库，但是使用需要支付昂贵的费用。在repeatmasker网站上公开了两个版本的[RepBase](http://repeatmasker.org/libraries/)：RepBaseRepeatMaskerEdition-20181026.tar.gz和RepeatMaskerMetaData-20170127.tar.gz。
+### repeatmask注释条目
+[RMGenomicDatasets](http://www.repeatmasker.org/genomicDatasets/RMGenomicDatasets.html)年代久远而且和UCSC下载的对不上。
 
 # genome & annotation 数据库条目
 ### 水稻基因组
