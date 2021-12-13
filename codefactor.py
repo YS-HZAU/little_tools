@@ -48,6 +48,8 @@ def readSam(insamfile):
     """
     if insamfile.endswith(".bam"):
         insam = pysam.AlignmentFile(insamfile,'rb')
+    elif insamfile.endswith(".sam.gz"):
+        insam = pysam.AlignmentFile(insamfile,'rb')
     elif insamfile.endswith(".sam"):
         insam = pysam.AlignmentFile(insamfile,'r')
     else:
