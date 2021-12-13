@@ -49,7 +49,8 @@ for read in fin:
     strand = "+"
     if read.is_reverse:
         strand = "-"
-    fout.write("{0}\t{1}\t{2}\t{3}\t{4}\t{5}\t{6}\t{7}\t{8}\n".format(read.reference_name,read.reference_start,read.reference_end,read.qname,read.mapping_quality,strand,read.qstart,read.qend,read.query_length))
+    fout.write("{0}\t{1}\t{2}\t{3}\t{4}\t{5}\t{6}\t{7}\t{8}\t{9}\t{10}\t{11}\n".format(
+        read.reference_name,read.reference_start,read.reference_end,read.qname,read.mapping_quality,strand,read.qstart,read.qend,read.query_length,read.cigarstring,read.get_tag("NM"),read.get_tag("MD")))
 
 fin.close()
 fout.close()
