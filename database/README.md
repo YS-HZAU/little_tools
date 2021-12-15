@@ -7,21 +7,26 @@
 [酵母的snoRNA数据库](https://people.biochem.umass.edu/fournierlab/snornadb/mastertable.php)<br/>
 [人的snoRNA数据库](https://www-snorna.biotoul.fr/getseq.php)。可以从这个网站下载snoRNA的序列。
 
-# microRNA database
+### ncRNA(有冗余分类)
+[GREAT](http://great.stanford.edu/public/html/)，根据附近的基因的注释，对非编码基因区域进行生物学意义注释。<br/>
 
 # RNA 二级结构
 [RNArchitecture](http://genesilico.pl/RNArchitecture/family/MIR807/secondarystructure)
 
 # repeat 数据库条目（有些repeat RNA也属于该条目）
 ### repeat database
-[RepBase](https://www.girinst.org/server/RepBase/)是一个整理的repeat数据库，但是使用需要支付昂贵的费用。在repeatmasker网站上公开了两个版本的[RepBase](http://repeatmasker.org/libraries/)：RepBaseRepeatMaskerEdition-20181026.tar.gz和RepeatMaskerMetaData-20170127.tar.gz。
+[RepBase](https://www.girinst.org/server/RepBase/)是一个整理的repeat数据库，但是使用需要支付昂贵的费用。在repeatmasker网站上公开了两个版本的[RepBase](http://repeatmasker.org/libraries/)：RepBaseRepeatMaskerEdition-20181026.tar.gz和RepeatMaskerMetaData-20170127.tar.gz。<br/>
+[Dfam](https://www.dfam.org/home), [Transposable Element DNA sequence alignments, hidden Markov Models (HMMs)](https://www.dfam.org/releases/Dfam_3.5/annotations/hg38/)<br/>
 ### repeatmask注释条目
-[RMGenomicDatasets](http://www.repeatmasker.org/genomicDatasets/RMGenomicDatasets.html)年代久远而且和UCSC下载的对不上。
+[RMGenomicDatasets](http://www.repeatmasker.org/genomicDatasets/RMGenomicDatasets.html)年代久远而且和UCSC下载的对不上。UCSC的用的是20130422版。
+[repeatmask的说明](http://www.repeatmasker.org/faq.html)
 
 # genome & annotation 数据库条目
 ### 水稻基因组
 [ZS97 & MH63](https://rice.hzau.edu.cn/cgi-bin/rice_rs3/download_ext)，缺点是不含线粒体和叶绿体<br/>
 [日本晴 Oryza](https://rapdb.dna.affrc.go.jp/download/irgsp1.html)，含有线粒体，叶绿体<br/>
+[UCSC基因组来源](http://genome.ucsc.edu/goldenPath/credits.html)<br/>
+[USCS收录的人类基因组注释](http://hgdownload.soe.ucsc.edu/goldenPath/hg38/)，以及一个[更新版](http://hgdownload.soe.ucsc.edu/goldenPath/archive/hg38/)
 
 # 林奈分类以及一些常见简写
 
