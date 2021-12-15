@@ -87,6 +87,8 @@ class SamRead:
             flag = read.query_name
         self.fin.close()
         yield outlist
+    def header(self):
+        return self.fin.header
 
 class FaRead:
     def __init__(self,infile):
