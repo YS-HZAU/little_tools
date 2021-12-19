@@ -1,9 +1,9 @@
 # 文献检索
 [scihub](https://www.scihub.net.cn/)<br/>
+
 # RNA 数据库条目
 ### snoRNA/snRNA database
 刚开始的时候，snoRNA和snRNA没有明显的差别，可以看到很多早期文献还在称U3为snRNA。所以合并了snRNA/snoRNA。<br/>
-
 [酵母的snoRNA数据库](https://people.biochem.umass.edu/fournierlab/snornadb/mastertable.php)<br/>
 [人的snoRNA数据库](https://www-snorna.biotoul.fr/getseq.php)。可以从这个网站下载snoRNA的序列。
 
@@ -26,8 +26,15 @@
 [ZS97 & MH63](https://rice.hzau.edu.cn/cgi-bin/rice_rs3/download_ext)，缺点是不含线粒体和叶绿体<br/>
 [日本晴 Oryza](https://rapdb.dna.affrc.go.jp/download/irgsp1.html)，含有线粒体，叶绿体<br/>
 [UCSC基因组来源](http://genome.ucsc.edu/goldenPath/credits.html)<br/>
-[USCS收录的人类基因组注释](http://hgdownload.soe.ucsc.edu/goldenPath/hg38/)，以及一个[更新版](http://hgdownload.soe.ucsc.edu/goldenPath/archive/hg38/)
+[USCS收录的人类基因组注释](http://hgdownload.soe.ucsc.edu/goldenPath/hg38/)，以及一个[更新版](http://hgdownload.soe.ucsc.edu/goldenPath/archive/hg38/)<br/>
+[human基因注释和功能注释 genecards](https://www.genecards.org/)<br/>
+[human基因注释和功能注释 HGNC](https://www.genenames.org/)<br/>
 
+# 常用在线小工具
+### 比对
+[多序列比对](https://www.novopro.cn/tools/muscle.html)<br/>
+[DeepL翻译器](https://www.deepl.com/translator)<br/>
+[科研者之家](https://www.home-for-researchers.com/static/index.html#/)<br/>
 # 林奈分类以及一些常见简写
 
 简写 | 全称 | 翻译 | 发现的场景
