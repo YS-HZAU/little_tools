@@ -4,3 +4,4 @@
 [龙珠超第79话](https://www.1kkk.com/ch79-1218998/)<br/>
 
 # 动漫
+[半妖的夜叉姬第二季第13话](http://www.yinghuacd.com/show/5389.html)
