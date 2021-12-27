@@ -18,12 +18,25 @@
 [RNArchitecture](http://genesilico.pl/RNArchitecture/family/MIR807/secondarystructure)
 
 # repeat 数据库条目（有些repeat RNA也属于该条目）
+注释条目说明
+```
+Short interspersed nuclear elements (SINE), which include ALUs
+Long interspersed nuclear elements (LINE)
+Long terminal repeat elements (LTR), which include retroposons
+DNA repeat elements (DNA)
+Simple repeats (micro-satellites)
+Low complexity repeats
+Satellite repeats
+RNA repeats (including RNA, tRNA, rRNA, snRNA, scRNA, srpRNA)
+Other repeats, which includes class RC (Rolling Circle)
+Unknown
+```
 ### repeat database
 [RepBase](https://www.girinst.org/server/RepBase/)是一个整理的repeat数据库，但是使用需要支付昂贵的费用。在repeatmasker网站上公开了两个版本的[RepBase](http://repeatmasker.org/libraries/)：RepBaseRepeatMaskerEdition-20181026.tar.gz和RepeatMaskerMetaData-20170127.tar.gz。<br/>
 [Dfam](https://www.dfam.org/home), [Transposable Element DNA sequence alignments, hidden Markov Models (HMMs)](https://www.dfam.org/releases/Dfam_3.5/annotations/hg38/)<br/>
 ### repeatmask注释条目
-[RMGenomicDatasets](http://www.repeatmasker.org/genomicDatasets/RMGenomicDatasets.html)年代久远而且和UCSC下载的对不上。UCSC的用的是20130422版。
-[repeatmask的说明](http://www.repeatmasker.org/faq.html)
+[RMGenomicDatasets](http://www.repeatmasker.org/genomicDatasets/RMGenomicDatasets.html)年代久远而且和UCSC下载的对不上。UCSC的用的是20130422版。<br/>
+[repeatmask的说明](http://www.repeatmasker.org/faq.html).<br/>
 
 # genome & annotation 数据库条目
 ### 水稻基因组
