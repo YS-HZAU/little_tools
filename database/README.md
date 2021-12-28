@@ -1,5 +1,6 @@
 # 文献检索
 [scihub](https://www.scihub.net.cn/)<br/>
+[wiki百科](https://zh.wikipedia.org/wiki/Wikipedia:%E9%A6%96%E9%A1%B5)<br/>
 
 # RNA 数据库条目
 ### snoRNA/snRNA database
