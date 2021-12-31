@@ -7,10 +7,13 @@
 ### 三维基因组测序
 [第一篇HiC技术报道文献](https://www.science.org/doi/10.1126/science.1181369). [Comprehensive Mapping of Long-Range Interactions Reveals Folding Principles of the Human Genome](DOI: 10.1126/science.1181369)
 - 第一篇提出HiC技术的文章
+
 [第一篇提出TAD概念](https://www.nature.com/articles/nature11082). [Topological domains in mammalian genomes identified by analysis of chromatin interactions](doi:10.1038/nature11082)
 - TAD分析
+
 [X染色体失活](https://www.nature.com/articles/nature11049). [Spatial partitioning of the regulatory landscape of the X-inactivation centre](doi:10.1038/nature11049)
 - X失活
+
 [insitu HiC](https://www.cell.com/cell/fulltext/S0092-8674(14)01497-4?_returnURL=https%3A%2F%2Flinkinghub.elsevier.com%2Fretrieve%2Fpii%2FS0092867414014974%3Fshowall%3Dtrue).[A 3D Map of the Human Genome at Kilobase Resolution Reveals Principles of Chromatin Looping](https://doi.org/10.1016/j.cell.2014.11.021)
 - 第一篇insitu HiC的文章，报道了insitu HiC的实验，分析工具(juicer)，单倍型
 - 对已有的分析方向/工具/技术/算法的总结，本质上是技术，工具，综述于一体的好文章。
