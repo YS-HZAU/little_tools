@@ -123,6 +123,21 @@ class FqRead:
             rqual = rqual.strip()
             yield rid,rseq,rsyb,rqual
         self.fin.close()
+
+class FqRead2:
+    def __init__(self,infile):
+        self.fin = readFile(infile)
+    def __iter__(self):
+        for line in self.fin:
+            rid = line.strip()
+            rseq = self.fin.readline()
+            rseq = rseq.strip()
+            rsyb = self.fin.readline()
+            rsyb = rsyb.strip()
+            rqual = self.fin.readline()
+            rqual = rqual.strip()
+            yield rid,rseq,rsyb,rqual
+        self.fin.close()
         
 def rc(sequence):
     """
