@@ -90,9 +90,13 @@ class SamRead:
     def header(self):
         return self.fin.header
 
+import sys
 class FaRead:
     def __init__(self,infile):
-        self.fin = readFile(infile)
+        if infile == None or infile == "-":
+            self.fin = sys.stdin
+        else:
+            self.fin = readFile(infile)
     def __iter__(self):
         flag = None
         outstr = ""
