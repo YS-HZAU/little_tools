@@ -59,6 +59,21 @@ featureCounts -a ~/zhangyan/genome/hg38.analysisSet.chroms/hg38.remove.gtf -o fe
 featureCounts -a ~/zhangyan/genome/hg38.analysisSet.chroms/hg38.remove.gtf -o featureCounts.${i}.${j}.longest.txt -t ${j} -g gene_id --largestOverlap -s ${i} -R BAM -T 1 --Rpath ${j}.${i}.featureCounts.longest --verbose allrich-23.uniqmap.tmp.1.bam
 ```
 
+# 序列拼接工具
+### flash
+[flash](http://ccb.jhu.edu/software/FLASH/index.shtml)
+```flash -M 150 -O --threads 12 --output-prefix out.flash --output-directory . read1.clean.fq read2.clean.fq```
+bug: 无法处理R1（R2）完全包含的reads。可能因为测序的偏差，导致R1和R2中的一段reads测序质量低被过滤掉。但是flash无法处理该情况。同时该情况在pandaseq中依然存在，而且pandaseq会输出一个明显错误的结果，flash输出为不拼接的结果。
+```
+R1: GTGAGCTGCCTTGGAAAAGGTTTGACATCATGGTCTCACCCTCCAGGCATTCGCAATGCTGTTGAAGCACTCTGGGCAATTCGGCTGGATTGCAACAGCCTCCTCGTTCTTCGCGATGCACATGTCAAACTCTCGTAGCTAAACCAAATC
+R2: 
+ATTTGGTTTAGCTACGAGAGGTTGACATGTGCATCGCGAAGAACGAGGAGGCTGTTGCAATCCAGCCGAATTGCCCAGAGTGCTTCAACAGCATTGCGAATGCCTGGAGGGTGAGACCATGATGTCAAACCTTTTCCAAGGC
+
+R1: GTGAGCTGCCTTGGAAAAGGTTTGACATCATGGTCTCACCCTCCAGGCATTCGCAATGCTGTTGAAGCACTCTGGGCAATTCGGCTGGATTGCAACAGCCTCCTCGTTCTTCGCGATGCACATGTCAACCTCTCGTAGCTAAACCAAATC
+R2: 
+ATTTGGTTTAGCTACGAGAGGTTGACATGTGCATCGCGAAGAACGAGGAGGCTGTTGCAATCCAGCCGAATTGCCCAGAGTGCTTCAACAGCATTGCGAATGCCTGGAGGGTGAGACCATGATGTCAAACCTTTTCCAAGGC
+```
+
 # 变异
 ### 变异注释
 [网页学习链接Annovar，SnpEff，Oncotator](http://yangli.name/2016/05/15/20160515annotation/)
