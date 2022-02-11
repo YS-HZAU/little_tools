@@ -59,7 +59,7 @@ Unknown
 [多序列比对](https://www.novopro.cn/tools/muscle.html)<br/>
 [DeepL翻译器](https://www.deepl.com/translator)<br/>
 [科研者之家](https://www.home-for-researchers.com/static/index.html#/)<br/>
-网络图绘制，可以用[cytoscape](https://cytoscape.org/)和[Gephi](https://gephi.org/)
+网络图绘制，可以用[cytoscape](https://cytoscape.org/)和[Gephi](https://gephi.org/)<br/>
 InterProscan 输出格式
 ```
 1. 蛋白质接入号	Protein Accession (e.g. P51587)
@@ -78,6 +78,7 @@ InterProscan 输出格式
 	(GO annotations (e.g. GO:0005515) - optional column; only displayed if --goterms option is switched on)
 	(Pathways annotations (e.g. REACT_71) - optional column; only displayed if --pathways option is switched on)
 ```
+[InterProscan的interpro2go注释文件](ftp.ebi.ac.uk/pub/databases/interpro/interpro2go)，[所有数据](http://ftp.ebi.ac.uk/pub/databases/interpro/)
 # 林奈分类以及一些常见简写
 
 简写 | 全称 | 翻译 | 发现的场景
