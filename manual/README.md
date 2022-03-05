@@ -1,4 +1,41 @@
 # 比对类工具
+### 关于比对类工具处理兼并碱基
+可以下载[水稻的细胞器基因组](https://rapdb.dna.affrc.go.jp/download/archive/Mt_Pt_genome.fasta)文件，里面包含了兼并碱基，也可以自定义。下载后，提取了一段reads做如下操作
+```
+@test1
+ATTGGCGGGAGTATATTATGGCAGGATCAGTCACCTGGGCAAACCARCCC
++
+ATTGGCGGGAGTATATTATGGCAGGATCAGTCACCTGGGCAAACCARCCC
+@test2
+ATTGGCGGGAGTATATTATGGCAGGATCAGTCACCTGGGCAAACCAACCC
++
+ATTGGCGGGAGTATATTATGGCAGGATCAGTCACCTGGGCAAACCAACCC
+@test3
+ATTGGCGGGAGTATATTATGGCAGGATCAGTCACCTGGGCAAACCAGCCC
++
+ATTGGCGGGAGTATATTATGGCAGGATCAGTCACCTGGGCAAACCAGCCC
+
+bwa：
+bwa index Mt_Pt_genome.fasta
+bwa mem Mt_Pt_genome.fasta test.fq
+
+hisat2:
+hisat2-build Mt_Pt_genome.fasta Mt_Pt_genome
+hisat2 -x Mt_Pt_genome -U test.fq
+
+STAR:
+mkdir -p starindex && STAR --runMode genomeGenerate --genomeDir starindex --genomeFastaFiles Mt_Pt_genome.fasta
+STAR --genomeDir starindex/ --outFileNamePrefix startest --readFilesIn test.fq 
+```
+bwa的结果如图
+![](figformanual\bwa.png)
+将fastq文件中的兼并碱基变成了N。同时，基因组索引文件中，这个位置被记录成了G
+hisat2的结果如图
+![](figformanual\hisat2.png)
+将fastq文件中的兼并碱基变成了A。而在基因组索引文件中，该位置被记录成N了。
+STAR的结果如图
+![](figformanual\STAR.png)
+三个均无错配，说明可以识别兼并碱基
 ### blast
 HAL1序列来源于RepBaseRepeatMaskerEdition-20181026.tar.gz，与[hg38 repeat](http://www.repeatmasker.org/genomes/hg38/RepeatMasker-rm405-db20140131/hg38.fa.out.gz)作比较。结果发现blast的比对结果短于注释的结果（bwa比对上的结果远远短于）。
 ```
