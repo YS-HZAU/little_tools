@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="ChIAPETLinkerFilter:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/ChIAPETLinkerFilter_jar</output-path>
+    <root id="archive" name="ChIAPETLinkerFilter.jar">
+      <element id="module-output" name="ChIAPETLinkerFilter" />
+    </root>
+  </artifact>
+</component>
