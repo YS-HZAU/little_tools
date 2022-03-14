@@ -27,3 +27,6 @@
 ### RNA二级结构
 [针对ncRNA的二级结构预测](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-9-474). [RNAalifold: improved consensus structure prediction for RNA alignments](doi:10.1186/1471-2105-9-474)。是[Rfam数据库中ncRNA二级结构推荐的注释工具](https://docs.rfam.org/en/latest/building-families.html?highlight=secondary%20structures#important-points-to-remember-about-seed-alignments)。
 还有RNAfold
+
+### 数据库
+[Rfam数据库](https://www.ncbi.nlm.nih.gov/sites/ppmc/articles/PMC2686503/). [Rfam: updates to the RNA families database](doi: 10.1093/nar/gkn766) 。Rfam收录了很多的ncRNA，并且也提供了ncRNA的注释
