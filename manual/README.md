@@ -15,7 +15,8 @@ TACTTACCTGGACGGGGTCGACGGCCGATCAAGAAGAGCCGTGGCCTAGGCCAATGGCCCACATTGCACTTGGTGGGCGC
 UACUUACCUGGACGGGGUCGACGGCCGAUCAAGAAGAGCCGUGGCCUAGGCCAAUGGCCCACAUUGCACUUGGUGGGCGCGUUGGCUUACCAUCUCCCCAAGCGGGAGAGUGGACGUCAUAAUUUGUGGUAGAGGGGGUACGCGUUCGCGCGGCCCCUGC
 ...(((((..(((((((((.(((((...((.....))))))))))))(((((((((((((((..........)))))).))))))))).(((((((((.....)))))).))).)))).........))))).((((((.((((....))))))))))..  
 ```
-将二级结构转成点对点配对关系（python脚本）
+得到的二级结构可以导入[R-chie](https://www.e-rna.org/r-chie/plot.cgi)生成模拟图。也可以用IGV实现<br/>
+将二级结构转成点对点配对关系（python脚本）<br/>
 ```
 aa = "U1"
 bb = "...(((((..(((((((((.(((((...((.....))))))))))))(((((((((((((((..........)))))).))))))))).(((((((((.....)))))).))).)))).........))))).((((((.((((....)))))))))).."
