@@ -29,4 +29,4 @@
 还有RNAfold
 
 ### 数据库
-[Rfam数据库](https://www.ncbi.nlm.nih.gov/sites/ppmc/articles/PMC2686503/). [Rfam: updates to the RNA families database](doi: 10.1093/nar/gkn766) 。Rfam收录了很多的ncRNA，并且也提供了ncRNA的注释
+[Rfam数据库](https://www.ncbi.nlm.nih.gov/sites/ppmc/articles/PMC2686503/). [Rfam: updates to the RNA families database](doi: 10.1093/nar/gkn766) 。Rfam收录了很多的ncRNA，并且也提供了Infernal工具对ncRNA的注释
