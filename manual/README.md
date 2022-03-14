@@ -274,3 +274,23 @@ LANG=C sort test
 aa = c(5.8,4.6,4.9)
 sd(aa)/mean(aa)
 ```
+
+# RNA二级结构
+### [RNAup](http://rna.tbi.univie.ac.at//cgi-bin/RNAWebSuite/RNAup.cgi)
+评估两个RNA的结合能
+### [RNAcofold](http://rna.tbi.univie.ac.at//cgi-bin/RNAWebSuite/RNAcofold.cgi)
+给出两个RNA的结合位点和方式
+```
+>U4
+ATCTTTGCGCTTGGGGCAATGACGCAGCTTATGAGGTTATACCGAGGCGCGTCAATTGCTGGTTGAAAACTATTTCCAAACCCCCTCTTTGGCCCACCCGGGCCACTGAGAATTTCTGGAAGGGCTCTCTCTCTTCGGAGAGAGTAAAGC
+>U6
+TCTCTTCGGAGACATCCGATAAAATTGGAACGATACAGAGAAGATTAGCATGGCCCCTGCGCAAGGATGACACGCACAAATCGAGAAATGGTCCAAATTTTT
+```
+得到
+```
+>U46
+AUCUUUGCGCUUGGGGCAAUGACGCAGCUUAUGAGGUUAUACCGAGGCGCGUCAAUUGCUGGUUGAAAACUAUUUCCAAACCCCCUCUUUGGCCCACCCGGGCCACUGAGAAUUUCUGGAAGGGCUCUCUCUCUUCGGAGAGAGUAAAGC&UCUCUUCGGAGACAUCCGAUAAAAUUGGAACGAUACAGAGAAGAUUAGCAUGGCCCCUGCGCAAGGAUGACACGCACAAAUCGAGAAAUGGUCCAAAUUUUU
+((((((((((..(((((..((((((.(((.....(((...)))..)))))))))..((((((((........((((((......(((..((((((....))))))..)))......))))))...(((((.((((((((((((.......&))))))))))))..((((((...)))))).......))))).))))))))..))))).))))))))))...............((((((.......))))))  
+```
+导入[R-chie](https://e-rna.org/r-chie/plot.cgi)得到
+![](figformanual\U46.png)
