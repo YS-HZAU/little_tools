@@ -23,3 +23,7 @@
 - encode计划中有大量的各种类型的数据，发现基因组上有些区域比对情况出现了系统性的偏差，去除了一些高复杂性，组装差的区域。
 - [black list下载](https://github.com/Boyle-Lab/Blacklist/)
 - encode 提供的一些个人black list： ENCSR636HFF
+
+### RNA二级结构
+[针对ncRNA的二级结构预测](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-9-474). [RNAalifold: improved consensus structure prediction for RNA alignments](doi:10.1186/1471-2105-9-474)。是[Rfam数据库中ncRNA二级结构推荐的注释工具](https://docs.rfam.org/en/latest/building-families.html?highlight=secondary%20structures#important-points-to-remember-about-seed-alignments)。
+还有RNAfold
