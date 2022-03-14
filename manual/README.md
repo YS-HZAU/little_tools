@@ -1,3 +1,125 @@
+# 可视化（浏览器）
+### IGV是一个复合的支持所有常见类型的基因组数据的浏览器
+##### IGV可视化二级结构配对关系
+准备U1的基因组文件（前后延伸了5bp）<br/>
+```
+>U1
+CAACATACTTACCTGGACGGGGTCGACGGCCGATCAAGAAGAGCCGTGGCCTAGGCCAATGGCCCACATTGCACTTGGTGGGCGCGTTGGCTTACCATCTCCCCAAGCGGGAGAGTGGACGTCATAATTTGTGGTAGAGGGGGTACGCGTTCGCGCGGCCCCTGCCAATT
+
+实际U1序列
+>U1
+TACTTACCTGGACGGGGTCGACGGCCGATCAAGAAGAGCCGTGGCCTAGGCCAATGGCCCACATTGCACTTGGTGGGCGCGTTGGCTTACCATCTCCCCAAGCGGGAGAGTGGACGTCATAATTTGTGGTAGAGGGGGTACGCGTTCGCGCGGCCCCTGC
+```
+将实际的U1序列投入[RNAalifold webserver](http://rna.tbi.univie.ac.at//cgi-bin/RNAWebSuite/RNAalifold.cgi)得到预测的RNA二级结构<br/>
+```
+UACUUACCUGGACGGGGUCGACGGCCGAUCAAGAAGAGCCGUGGCCUAGGCCAAUGGCCCACAUUGCACUUGGUGGGCGCGUUGGCUUACCAUCUCCCCAAGCGGGAGAGUGGACGUCAUAAUUUGUGGUAGAGGGGGUACGCGUUCGCGCGGCCCCUGC
+...(((((..(((((((((.(((((...((.....))))))))))))(((((((((((((((..........)))))).))))))))).(((((((((.....)))))).))).)))).........))))).((((((.((((....))))))))))..  
+```
+将二级结构转成点对点配对关系（python脚本）
+```
+aa = "U1"
+bb = "...(((((..(((((((((.(((((...((.....))))))))))))(((((((((((((((..........)))))).))))))))).(((((((((.....)))))).))).)))).........))))).((((((.((((....)))))))))).."
+# print(len(aa))
+# print(len(bb))
+
+mylist = []
+for index,ii in enumerate(bb):
+    if ii == "(":
+        mylist.append(index+1)
+    if ii == ")":
+        p = mylist.pop()
+        print("{0}\t{1}\t{2}".format(aa,p,index+1))
+# print(len(mylist))
+
+然后转化成实际位点：
+awk '{if(NR==1){print $0}else{print $1"\t"5+$2-2"\t"5+$3-2}}' U1.bed > U1.cg.bed
+```
+![](figformanual\IGV.curve.png)<br/>
+```
+track graphType=arc
+U1	33	39
+U1	32	40
+U1	28	41
+U1	27	42
+U1	26	43
+U1	25	44
+U1	24	45
+U1	22	46
+U1	21	47
+U1	20	48
+U1	19	49
+U1	18	50
+U1	65	76
+U1	64	77
+U1	63	78
+U1	62	79
+U1	61	80
+U1	60	81
+U1	59	83
+U1	58	84
+U1	57	85
+U1	56	86
+U1	55	87
+U1	54	88
+U1	53	89
+U1	52	90
+U1	51	91
+U1	101	107
+U1	100	108
+U1	99	109
+U1	98	110
+U1	97	111
+U1	96	112
+U1	95	114
+U1	94	115
+U1	93	116
+U1	17	118
+U1	16	119
+U1	15	120
+U1	14	121
+U1	11	131
+U1	10	132
+U1	9	133
+U1	8	134
+U1	7	135
+U1	147	152
+U1	146	153
+U1	145	154
+U1	144	155
+U1	142	156
+U1	141	157
+U1	140	158
+U1	139	159
+U1	138	160
+U1	137	161
+```
+##### IGV可视化bed文件
+IGV支持bed3，bed4，bed6，bed12，narrowPeak（bed10）。其中介绍一下bed12<br/>
+```
+U1	28	143	27_Plus_A00988:31:HYVN7DSXY:3:1101:3703:16579	.	+	28	143	255,0,0	2	39,72	0,43
+U1	14	138	96_Plus_A00988:31:HYVN7DSXY:3:1101:8666:20572	.	+	14	138	255,0,0	2	21,100	0,24
+U1	27	138	161_Plus_A00988:31:HYVN7DSXY:3:1101:17065:7748	.	+	27	138	255,0,0	2	41,67	0,44
+U1	73	165	205_Plus_A00988:31:HYVN7DSXY:3:1101:22218:16485	.	+	73	165	255,0,0	2	69,78	0,14
+U1	17	144	460_Plus_A00988:31:HYVN7DSXY:3:1102:15998:34115	.	+	17	144	255,0,0	2	50,73	0,54
+U1	20	134	563_Plus_A00988:31:HYVN7DSXY:3:1102:26549:27398	.	+	20	134	255,0,0	2	47,63	0,51
+U1	33	105	567_Plus_A00988:31:HYVN7DSXY:3:1102:26928:28119	.	+	33	105	255,0,0	2	90,45	0,27
+U1	27	139	593_Plus_A00988:31:HYVN7DSXY:3:1102:30463:16110	.	+	27	139	255,0,0	2	40,68	0,44
+U1	26	133	687_Plus_A00988:31:HYVN7DSXY:3:1103:8223:29543	.	+	26	133	255,0,0	2	42,62	0,45
+U1	17	138	719_Plus_A00988:31:HYVN7DSXY:3:1103:10728:28119	.	+	17	138	255,0,0	2	51,67	0,54
+U1	20	138	791_Plus_A00988:31:HYVN7DSXY:3:1103:17047:16955	.	+	20	138	255,0,0	2	48,67	0,51
+U1	27	145	843_Plus_A00988:31:HYVN7DSXY:3:1103:22761:10723	.	+	27	145	255,0,0	2	35,82	0,36
+U1	22	138	955_Plus_A00988:31:HYVN7DSXY:3:1103:31530:36777	.	+	22	138	255,0,0	2	46,67	0,49
+U1	27	144	987_Plus_A00988:31:HYVN7DSXY:3:1104:2275:19711	.	+	27	144	255,0,0	2	41,73	0,44
+U1	21	146	1173_Plus_A00988:31:HYVN7DSXY:3:1104:19651:30608	.	+	21	146	255,0,0	2	47,75	0,50
+U1	20	138	1286_Plus_A00988:31:HYVN7DSXY:3:1104:31801:21496	.	+	20	138	255,0,0	2	48,67	0,51
+U1	23	143	1317_Plus_A00988:31:HYVN7DSXY:3:1105:3558:30138	.	+	23	143	255,0,0	2	43,72	0,48
+U1	20	141	1456_Plus_A00988:31:HYVN7DSXY:3:1105:18548:6308	.	+	20	141	255,0,0	2	48,70	0,51
+U1	17	146	1540_Plus_A00988:31:HYVN7DSXY:3:1105:26323:14199	.	+	17	146	255,0,0	2	50,75	0,54
+
+chrom   start   end rid score   strand  start   end rgb_id  block_number    block_length    block_start
+```
+其中block_start，第一个一定是0，第二个是第二段的起点-第一段的起点。以此类推，都是n个block的起点减去第一个block的起点。
+
 # 比对类工具
 ### 关于比对类工具处理兼并碱基
 可以下载[水稻的细胞器基因组](https://rapdb.dna.affrc.go.jp/download/archive/Mt_Pt_genome.fasta)文件，里面包含了兼并碱基，也可以自定义。下载后，提取了一段reads做如下操作
