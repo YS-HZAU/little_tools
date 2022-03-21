@@ -4,7 +4,7 @@
 [龙珠超第81话](https://www.1kkk.com/ch81-1240839/#ipg45)<br/>
 
 # 动漫
-[半妖的夜叉姬第二季第13话](http://www.yinghuacd.com/show/5389.html)<br/>
+[半妖的夜叉姬第二季第23话](http://www.yinghuacd.com/show/5389.html)<br/>
 [龙珠英雄第二季第2话](http://www.yinghuacd.com/v/4924-2.html)<br/>
 [游戏王第四季ZEXAL第1话](https://www.dm530p.net/view/12183.html)<br/>
 
