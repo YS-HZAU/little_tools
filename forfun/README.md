@@ -1,7 +1,7 @@
 # 漫画
-[海贼王第1039话](http://www.mangabz.com/139bz/)<br/>
-[龙珠超次元乱战第84话](https://tieba.baidu.com/p/5477829492?pn=1)<br/>
-[龙珠超第79话](https://www.1kkk.com/ch79-1218998/)<br/>
+[海贼王第1043话](http://www.mangabz.com/m219914/#ipg15)<br/>
+[龙珠超次元乱战第87话](https://tieba.baidu.com/p/5477829492?pn=1)<br/>
+[龙珠超第81话](https://www.1kkk.com/ch81-1240839/#ipg45)<br/>
 
 # 动漫
 [半妖的夜叉姬第二季第13话](http://www.yinghuacd.com/show/5389.html)<br/>
@@ -42,3 +42,5 @@
 
 # 一起来编程
 [leetcode](https://leetcode-cn.com/problemset/all/?difficulty=%E7%AE%80%E5%8D%95)<br/>
+[谷粉搜搜](http://gfsoso.me/)<br/>
+[谷粉学术](https://gfsoso.99lb.net/)<br/>
